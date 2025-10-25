@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      width: 420px;
+      min-height: 500px;
+      background: #fafafa;
+      color: #0a0a0a;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #8b5cf6;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+      display: inline-block;
+    }
+
+    .header h1::after {
+      content: '•';
+      color: #8b5cf6;
+      margin-left: 2px;
+    }
+
+    .header p {
+      font-size: 13px;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding: 14px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #8b5cf6;
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .status-dot.ready {
+      background: #10b981;
+      animation: none;
+    }
+
+    .status-dot.error {
+      background: #ef4444;
+      animation: none;
+    }
+
+    .status-info strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: #0a0a0a;
+    }
+
+    .status-info small {
+      font-size: 11px;
+      color: #666666;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .quick-guide {
+      background: #f3f0ff;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-left: 3px solid #8b5cf6;
+    }
+
+    .quick-guide h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #7c3aed;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .quick-guide ol {
+      margin-left: 18px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #0a0a0a;
+    }
+
+    .quick-guide li {
+      margin-bottom: 4px;
+    }
+
+    .research-goal {
+      margin-bottom: 16px;
+    }
+
+    .research-goal h3 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #666666;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .research-goal .optional-badge {
+      font-size: 9px;
+      background: #f3f0ff;
+      color: #7c3aed;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .goal-input-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .goal-input {
+      flex: 1;
+      padding: 10px 12px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .goal-input:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+
+    .goal-input::placeholder {
+      color: #9ca3af;
+    }
+
+    .btn-small {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+      background: #8b5cf6;
+      color: white;
+    }
+
+    .btn-small:hover {
+      background: #7c3aed;
+    }
+
+    .goal-helper {
+      font-size: 11px;
+      color: #666666;
+      margin-top: 6px;
+    }
+
+    .sources-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .sources-header h3 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sources-count-badge {
+      background: #8b5cf6;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .source-card {
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      transition: all 0.15s;
+    }
+
+    .source-card:hover {
+      border-color: #8b5cf6;
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .source-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .source-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .source-title {
+      font-weight: 600;
+      font-size: 13px;
+      color: #0a0a0a;
+      margin-bottom: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .source-meta {
+      font-size: 10px;
+      color: #666666;
+    }
+
+    /* FIXED: Short summary preview */
+    .source-summary-short {
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: #f3f0ff;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #0a0a0a;
+      border-left: 4px solid #8b5cf6;
+    }
+
+    /* FIXED: Toggle button - MATCH EDITOR */
+    .source-summary-toggle {
+      width: 100%;
+      padding: 10px 14px;
+      margin-top: 10px;
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: #8b5cf6;
+      text-align: left;
+      transition: all 0.15s;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .source-summary-toggle::after {
+      content: '▼';
+      font-size: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .source-summary-toggle:hover {
+      background: #f3f0ff;
+      border-color: #8b5cf6;
+      transform: translateY(-1px);
+    }
+
+    .source-summary-toggle.expanded {
+      background: #f3f0ff;
+      border-color: #8b5cf6;
+    }
+
+    .source-summary-toggle.expanded::after {
+      transform: rotate(180deg);
+    }
+
+    /* FIXED: Full summary content - MATCH EDITOR STYLE */
+    .source-summary-full {
+      margin-top: 12px;
+      padding: 16px;
+      background: #ffffff;
+      border: 2px solid #c4b5fd;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #0a0a0a;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    /* FIXED: Scrollbar - MATCH EDITOR */
+    .source-summary-full::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .source-summary-full::-webkit-scrollbar-track {
+      background: #fafafa;
+      border-radius: 3px;
+    }
+
+    .source-summary-full::-webkit-scrollbar-thumb {
+      background: #8b5cf6;
+      border-radius: 3px;
+    }
+
+    .source-summary-full::-webkit-scrollbar-thumb:hover {
+      background: #7c3aed;
+    }
+
+    .source-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .source-btn {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid #e5e5e5;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .source-btn:hover {
+      background: #8b5cf6;
+      color: white;
+      border-color: #8b5cf6;
+      transform: translateY(-1px);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .empty-state p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #666666;
+      margin-bottom: 6px;
+    }
+
+    .empty-state small {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background: #8b5cf6;
+      color: white;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: #7c3aed;
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #0a0a0a;
+      color: white;
+      border: 2px solid #0a0a0a;
+    }
+
+    .btn-secondary:hover {
+      background: #1a1a1a;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Parallel</h1>
+      <p>Capture sources as you research, write with AI</p>
+    </div>
+
+    <div class="content">
+      <div class="status">
+        <div class="status-dot" id="statusDot"></div>
+        <div class="status-info">
+          <strong id="statusTitle">Checking AI...</strong>
+          <small id="statusDetail">Gemini Nano initializing...</small>
+        </div>
+      </div>
+
+      <div class="quick-guide" id="quickGuide">
+        <h3>How to Use Parallel</h3>
+        <ol>
+          <li><strong>Set your goal</strong> (optional but recommended)</li>
+          <li><strong>Browse articles</strong> and click "Capture"</li>
+          <li><strong>Open Editor</strong> to write with AI</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="research-goal">
+          <h3>
+            Research Goal 
+            <span class="optional-badge">OPTIONAL</span>
+          </h3>
+          <div class="goal-input-group">
+            <input 
+              type="text" 
+              id="researchGoal" 
+              class="goal-input" 
+              placeholder="e.g., AI in healthcare"
+            />
+            <button id="setGoalBtn" class="btn-small">Set</button>
+          </div>
+          <div class="goal-helper">
+            Setting a goal helps AI check if sources are relevant
+          </div>
+        </div>
+
+        <div class="sources-header">
+          <h3>Captured Sources</h3>
+          <span class="sources-count-badge" id="sourcesCount">0</span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <p>No sources yet</p>
+          <small>Browse to any article and click "Capture This Page"</small>
+        </div>
+
+        <div id="sourcesList"></div>
+      </div>
+
+      <button id="captureBtn" class="btn btn-primary">
+        Capture This Page
+      </button>
+
+      <button id="openEditorBtn" class="btn btn-secondary">
+        Open Editor
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
