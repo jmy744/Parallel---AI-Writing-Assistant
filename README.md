@@ -675,7 +675,6 @@ See [LICENSE](LICENSE) file for full details.
 ## 📞 Support
 
 - **Bugs:** [GitHub Issues](https://github.com/jmy744/Parallel---AI-Writing-Assistant/issues)
-- **Features:** [Discussions](https://github.com/jmy744/Parallel---AI-Writing-Assistant/discussions)
 - **Contact:** [@jmy744](https://github.com/jmy744)
 
 ---
