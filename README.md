@@ -1,17 +1,15 @@
 # Parallel• - Offline AI Writing & Research Assistant
 
-![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-blue?logo=googlechrome)
-![Built with AI](https://img.shields.io/badge/Gemini-Nano-purple?logo=google)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Chrome Built-in AI](https://img.shields.io/badge/Chrome%20Built--in%20AI-5%20APIs-orange)
 
 **Transform your browser into a complete research and writing workstation powered by Gemini Nano. Work 100% offline with complete privacy.**
 
 **Built for:** Students | Researchers | Professional Writers
+<p align="center"
+<img width="128" height="128" alt="icon128" src="https://github.com/user-attachments/assets/bab0817c-7db5-4d15-a9fd-9bed2720ddb2" /></p>
 
 ---
 
-## 🎯 The Problem We're Solving
+## 🎯 The Problem I'm Solving
 
 Students, researchers, and writers face these daily challenges:
 - 💰 **Expensive AI subscriptions** ($20-200/month for ChatGPT Plus, Claude Pro, Grammarly Premium)
@@ -514,7 +512,7 @@ const spaceBelow = viewportHeight - rect.bottom;
 - ⚠️ Real-time data (no internet = no current events)
 - ⚠️ Complex mathematics (basic OK, advanced limited)
 
-**Our Recommendation:**
+**Recommendation:**
 - Use for drafting & editing
 - Fact-check technical claims
 - Verify citations
@@ -531,7 +529,6 @@ const spaceBelow = viewportHeight - rect.bottom;
 | Chrome Stable | 138+ | ✅ Future (Q1 2025) |
 
 
-**Why Chrome only?** Chrome Built-in AI APIs are Chrome-exclusive innovation.
 
 ---
 
