@@ -27,7 +27,7 @@ Parallel is a Chrome extension that brings **professional-grade AI writing assis
 
 ### Core Capabilities
 
-| Feature | Description | Powered By |
+| Feature | Description | API |
 |---------|-------------|------------|
 | **Smart Source Capture** | One-click webpage capture with AI summarization | Summarizer API |
 | **AI Content Generation** | Generate articles, blog posts, research papers | Prompt API |
@@ -188,7 +188,7 @@ Click "Export" dropdown
 
 ---
 
-## ✨ Key Features (Detailed)
+## ✨ Key Features 
 
 ### **1. Smart Source Capture**
 
@@ -217,7 +217,7 @@ AI:  • Extracts main content (removes ads, menus, clutter)
 **Traditional AI:**
 ```
 Goal: 500 words
-Output: "The research demonstrates fostering..." ❌
+Output: "The research demonstrates fostering..." 
 (stops at 500 words mid-sentence)
 ```
 
@@ -225,7 +225,7 @@ Output: "The research demonstrates fostering..." ❌
 ```
 Goal: 500 words  
 Range: 475-525 words (±5% tolerance)
-Output: "The research demonstrates fostering community engagement." ✅
+Output: "The research demonstrates fostering community engagement." 
 (502 words, complete sentence)
 ```
 
@@ -456,7 +456,7 @@ if (rewriterAPI.available) {
 
 ## 🚨 Challenges & Honest Limitations
 
-### **1. Smart Word Goals** ✅ SOLVED
+### **1. Smart Word Goals** 
 
 **Problem:** AI stops mid-sentence at exact word counts.
 
@@ -469,7 +469,7 @@ if (currentWords >= targetMin && endsWithSentence(text)) {
 
 ---
 
-### **2. Zoom-Aware UI** ✅ SOLVED
+### **2. Zoom-Aware UI** 
 
 **Problem:** Floating toolbar breaks at different zoom levels.
 
@@ -484,7 +484,7 @@ const spaceBelow = viewportHeight - rect.bottom;
 
 ---
 
-### **3. Content Extraction** ✅ SOLVED
+### **3. Content Extraction**
 
 **Problem:** Webpages have ads, menus, clutter.
 
@@ -529,7 +529,7 @@ const spaceBelow = viewportHeight - rect.bottom;
 | Chrome Canary | 128+ | ✅ Full support |
 | Chrome Dev | 128+ | ✅ Full support |
 | Chrome Stable | 138+ | ✅ Future (Q1 2025) |
-| Firefox/Safari | Any | ❌ No built-in AI |
+
 
 **Why Chrome only?** Chrome Built-in AI APIs are Chrome-exclusive innovation.
 
@@ -552,7 +552,7 @@ const spaceBelow = viewportHeight - rect.bottom;
 
 ---
 
-## 🎓 Use Cases & Examples
+##  Use Cases & Examples
 
 ### **Example 1: Research Paper (Student)**
 
@@ -634,26 +634,26 @@ const spaceBelow = viewportHeight - rect.bottom;
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
-### **Version 1.1** (Next 3 Months)
+### **Version 1.1** 
 - Citation management (APA, MLA, Chicago, Harvard)
 - Dark mode
 - Keyboard shortcuts (Ctrl+K)
 - Export to Markdown
 - PDF source support
 
-### **Version 1.2** (6 Months)
+### **Version 1.2** 
 - Template library
 - Advanced formatting
-- Voice input (when API available)
-- Image support (when API available)
+- Voice input 
+- Image support 
 
-### **Version 2.0** (12 Months)
+### **Version 2.0** 
 - Progressive Web App (mobile)
 - Team collaboration (optional)
 - Advanced research features
-- Chrome Web Store listing
+  
 
 ---
 
@@ -717,7 +717,6 @@ If Parallel helps you:
 
 **Repository:** https://github.com/jmy744/Parallel---AI-Writing-Assistant  
 **Version:** 1.0.0  
-**Status:** Production Ready ✅
 
 ---
 
