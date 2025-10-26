@@ -1,25 +1,19 @@
 # Parallel• - Offline AI Writing & Research Assistant
-
-![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-blue?logo=googlechrome)
-![Built with AI](https://img.shields.io/badge/Gemini-Nano-purple?logo=google)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Chrome Built-in AI](https://img.shields.io/badge/Chrome%20Built--in%20AI-5%20APIs-orange)
-
 **Transform your browser into a complete research and writing workstation powered by Gemini Nano. Work 100% offline with complete privacy.**
 
 **Built for:** Students | Researchers | Professional Writers
 
 ---
 
-## 🎯 The Problem We're Solving
+## 🎯 The Problem I'm Solving
 
 Students, researchers, and writers face these daily challenges:
-- 💰 **Expensive AI subscriptions** ($20-200/month for ChatGPT Plus, Claude Pro, Grammarly Premium)
-- 🔒 **Privacy concerns** sending academic work to cloud servers
-- 📶 **Unreliable internet** access in libraries, coffee shops, or while traveling
-- 📊 **Scattered research** across dozens of tabs and bookmarks
-- ⏱️ **Time wasted** switching between reading, researching, and writing tools
-- 📝 **Writer's block** when starting from blank pages
+-  **Expensive AI subscriptions** ($20-200/month for ChatGPT Plus, Claude Pro, Grammarly Premium)
+-  **Privacy concerns** sending academic work to cloud servers
+-  **Unreliable internet** access in libraries, coffee shops, or while traveling
+-  **Scattered research** across dozens of tabs and bookmarks
+-  **Time wasted** switching between reading, researching, and writing tools
+-  **Writer's block** when starting from blank pages
 
 ## ✨ The Parallel Solution
 
@@ -118,9 +112,9 @@ Download Chrome Canary:
 
 1. Click Parallel icon
 2. Check status:
-   - ✅ **"AI Ready - 4-5 APIs available"** = Perfect!
-   - ⚠️ **"Checking AI..."** = Wait 10-20 seconds
-   - ❌ **"AI not available"** = Review steps 1-3
+   -  **"AI Ready - 4-5 APIs available"** = Perfect!
+   -  **"Checking AI..."** = Wait 10-20 seconds
+   -  **"AI not available"** = Review steps 1-3
 
 **Expected API counts:**
 - **Best:** 5/5 APIs (Prompt, Summarizer, Writer, Rewriter, Translator)
@@ -188,7 +182,7 @@ Click "Export" dropdown
 
 ---
 
-## ✨ Key Features (Detailed)
+## ✨ Key Features 
 
 ### **1. Smart Source Capture**
 
@@ -282,8 +276,6 @@ Translate documents to 7 languages instantly:
 3. Both title + content translated
 4. Clean output (auto-removes labels)
 
-**Powered by:** Translator API (with Prompt API fallback)
-
 ---
 
 ### **5. Live Streaming Generation**
@@ -344,7 +336,7 @@ Your text: "The study examined three key factors:"
 
 ---
 
-## 🏗️ Architecture & Technology
+##  Architecture & Technology
 
 ### **Chrome Built-in AI APIs**
 
@@ -364,9 +356,6 @@ if (rewriterAPI.available) {
 } else {
   result = await promptAPI.prompt(`Rewrite: ${text}`);
 }
-```
-
-✅ **100% feature reliability** regardless of API availability!
 
 ---
 
@@ -424,7 +413,7 @@ if (rewriterAPI.available) {
 **Cloud AI Problem:**
 - Your essays → OpenAI servers
 - Your research → Google servers
-- Your ideas → Training material?
+- Your ideas → Training material
 
 **Parallel Solution:**
 
@@ -488,11 +477,9 @@ const spaceBelow = viewportHeight - rect.bottom;
 - Remove noise (`nav`, `aside`, `footer`)
 - Clean whitespace
 
-**Result:** Clean content from 95%+ of sites
-
 ---
 
-### **4. Current Limitations** (Honest)
+### **4. Current Limitations** 
 
 #### **AI Model Constraints:**
 
@@ -509,7 +496,7 @@ const spaceBelow = viewportHeight - rect.bottom;
 - ⚠️ Real-time data (no internet = no current events)
 - ⚠️ Complex mathematics (basic OK, advanced limited)
 
-**Our Recommendation:**
+**Recommendation:**
 - Use for drafting & editing
 - Fact-check technical claims
 - Verify citations
@@ -631,20 +618,20 @@ const spaceBelow = viewportHeight - rect.bottom;
 
 ## 🗺️ Roadmap
 
-### **Version 1.1** (Next 3 Months)
+### **Version 1.1**
 - Citation management (APA, MLA, Chicago, Harvard)
 - Dark mode
 - Keyboard shortcuts (Ctrl+K)
 - Export to Markdown
 - PDF source support
 
-### **Version 1.2** (6 Months)
+### **Version 1.2** 
 - Template library
 - Advanced formatting
 - Voice input (when API available)
 - Image support (when API available)
 
-### **Version 2.0** (12 Months)
+### **Version 2.0** 
 - Progressive Web App (mobile)
 - Team collaboration (optional)
 - Advanced research features
@@ -678,7 +665,7 @@ See [LICENSE](LICENSE) file for full details.
 
 ---
 
-## 🌟 Show Your Support
+##  Show Your Support
 
 If Parallel helps you:
 - ⭐ Star this repository
@@ -704,16 +691,12 @@ If Parallel helps you:
 
 **Built with ❤️ for students, researchers, and writers worldwide.**
 
-**Parallel• - Your Second Brain for Research & Writing**
+**Parallel• - Transform your browser into a complete research and writing workstation powered by Gemini Nano - 100% offline, 100% private.**
 
-**Powered by Chrome Built-in AI + Gemini Nano** 🧠✨
-
----
-
-**Repository:** https://github.com/jmy744/Parallel---AI-Writing-Assistant  
-**Version:** 1.0.0  
-**Status:** Production Ready ✅
+**Chrome Built-in AI + Gemini Nano** 🧠✨
 
 ---
 
-**Star ⭐ this repo if Parallel helps you!**
+**Repository:** https://github.com/jmy744/Parallel---AI-Writing-Assistant.git
+
+
