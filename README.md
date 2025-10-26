@@ -707,7 +707,7 @@ If Parallel helps you:
 
 **Parallel• - Your Second Brain for Research & Writing**
 
-**Powered by Chrome Built-in AI + Gemini Nano** 🧠✨
+**Powered by Chrome Built-in AI + Gemini Nano**
 
 ---
 
