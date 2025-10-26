@@ -2,8 +2,8 @@
 **Transform your browser into a complete research and writing workstation powered by Gemini Nano. Work 100% offline with complete privacy.**
 
 **Built for:** Students | Researchers | Professional Writers
-
-<img width="128" height="128" alt="icon128" <div align="center" </div> src="https://github.com/user-attachments/assets/3c2d643d-0595-43af-a4ca-5e6088948c20" />
+<p align="center">
+<img width="128" height="128" alt="icon128" src="https://github.com/user-attachments/assets/3c2d643d-0595-43af-a4ca-5e6088948c20" /></p>
 
 ---
 
