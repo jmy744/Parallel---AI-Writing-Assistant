@@ -260,11 +260,6 @@ Highlight text → Floating toolbar with 8 tools:
 | **Shorten** | Make concise | Prompt | 3 sentences → 1 clear one |
 | **Suggest** | Improvements | Prompt | 3 specific suggestions |
 
-**Smart UI:**
-- **Zoom-aware**: Works at 75%-125% zoom
-- **Position-smart**: Appears above/below based on space
-- **Fast**: <1 second response
-
 ---
 
 ### **4. Multi-Language Translation**
