@@ -1,4 +1,4 @@
-// Parallel Content Script - COMPLETE BULLETPROOF VERSION
+
 // Extracts text content from any webpage reliably
 
 console.log('🔧 Parallel content script loaded');
@@ -228,7 +228,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     }
   }
   
-  return true; // Keep message channel open for async response
+  return true; 
 });
 
 // ========================================
