@@ -1,4 +1,4 @@
-// Parallel Popup - FIXED FOR NEW HTML
+
 
 const $ = (selector) => document.querySelector(selector);
 let sources = [];
