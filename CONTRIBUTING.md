@@ -442,10 +442,6 @@ Always use:
 
 ## 📞 Getting Help
 
-### **Questions?**
-- Open a [GitHub Discussion](https://github.com/jmy744/Parallel---AI-Writing-Assistant/discussions)
-- Check existing issues and discussions
-
 ### **Found a Bug?**
 - Open a [GitHub Issue](https://github.com/jmy744/Parallel---AI-Writing-Assistant/issues)
 
@@ -487,7 +483,7 @@ Violations may result in:
 2. Temporary ban
 3. Permanent ban
 
-Report violations to: [GitHub Issues]
+
 
 ---
 
@@ -499,7 +495,6 @@ Thank you for contributing to Parallel! Every contribution helps make this tool 
 
 ---
 
-**Questions?** Open a discussion: https://github.com/jmy744/Parallel---AI-Writing-Assistant/discussions
 
 **Found a bug?** Open an issue: https://github.com/jmy744/Parallel---AI-Writing-Assistant/issues
 
