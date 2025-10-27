@@ -1,4 +1,4 @@
-// Parallel Service Worker - COMPLETE with ALL APIs
+// Parallel Service Worker
 
 let isInitialized = false;
 let sessions = {
