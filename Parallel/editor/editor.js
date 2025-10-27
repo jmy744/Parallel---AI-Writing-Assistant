@@ -1,4 +1,3 @@
-// Parallel Editor - COMPLETE WITH ALL CHROME AI APIs AND DOCUMENT MANAGEMENT
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => Array.from(document.querySelectorAll(s));
@@ -27,7 +26,7 @@ let state = {
 let originalContent = '';
 
 // ========================================
-// AI INITIALIZATION (ALL APIs)
+// AI INITIALIZATION 
 // ========================================
 
 async function initAI() {
@@ -179,7 +178,7 @@ async function saveDocument() {
       console.log('➕ Added new document');
     }
     
-    // Keep only last 50 documents
+    
     if (documents.length > 50) {
       documents.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
       documents = documents.slice(0, 50);
@@ -188,7 +187,7 @@ async function saveDocument() {
     await chrome.storage.local.set({ documents, currentDocId: state.currentDocId });
     console.log('✅ Auto-saved:', title);
     
-    // Update dropdown if title changed
+    // Update 
     updateDocumentTitle();
     
   } catch (error) {
@@ -225,7 +224,7 @@ async function loadDocument() {
       $('#articleTitle').focus();
     }
     
-    // Load documents list for dropdown
+    // Load documents list 
     await loadDocumentsList();
     
   } catch (error) {
@@ -252,7 +251,7 @@ async function loadDocumentsList() {
       const option = document.createElement('option');
       option.value = doc.id;
       
-      // FIXED: Show document NAME in dropdown (not article title)
+      // document NAME 
       option.textContent = doc.name || 'Untitled Document';
       
       // Mark as selected if it's the current document
@@ -304,7 +303,7 @@ async function switchDocument(documentId) {
       
       updateStats();
       updateWordGoal();
-      await loadDocumentsList(); // Refresh the dropdown
+      await loadDocumentsList(); 
       
       showToast('📄', 'Document Loaded', selectedDoc.name || 'Untitled Document');
       console.log('✅ Switched to document:', selectedDoc.name || selectedDoc.title);
@@ -386,7 +385,7 @@ async function loadSources() {
 }
 
 // ========================================
-// RENDER SOURCES (WITH PREVIEW)
+// RENDER SOURCES 
 // ========================================
 
 function renderSources() {
@@ -477,7 +476,7 @@ function renderSources() {
 }
 
 // ========================================
-// CLEAN AI OUTPUT - FIXED
+// AI OUTPUT 
 // ========================================
 
 function cleanAIOutput(text) {
@@ -560,7 +559,7 @@ async function generateTitle() {
 }
 
 // ========================================
-// GENERATE ARTICLE - WITH WORD GOAL CONSTRAINT
+// GENERATE ARTICLE 
 // ========================================
 
 async function generateArticle() {
@@ -647,7 +646,7 @@ async function generateArticle() {
 }
 
 // ========================================
-// STREAMING GENERATION - WITH WORD GOAL
+// STREAMING GENERATION  WORD GOAL
 // ========================================
 
 async function generateWithStreaming(title, format, tone, userIntent) {
@@ -1796,7 +1795,7 @@ function updateChatMessage(id, content, isHtml) {
 }
 
 // ========================================
-// EXPORT - UPDATED (Copy to Clipboard, HTML, Word)
+// EXPORT 
 // ========================================
 
 async function exportDocument(format) {
@@ -2280,7 +2279,7 @@ async function manualSave() {
 }
 
 // ========================================
-// EVENT LISTENERS - COMPLETE WITH DOCUMENT MANAGEMENT
+// EVENT LISTENERS 
 // ========================================
 
 document.addEventListener('DOMContentLoaded', async () => {
